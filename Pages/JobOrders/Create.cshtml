@@ -1,0 +1,57 @@
+﻿@page
+@model EmployeesCRUD.Pages.JobOrders.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>JobOrdersTable</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="JobOrdersTable.EmployeeId" class="control-label"></label>
+                <select asp-for="JobOrdersTable.EmployeeId" class ="form-control" asp-items="ViewBag.EmployeeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobOrdersTable.ProjectId" class="control-label"></label>
+                <select asp-for="JobOrdersTable.ProjectId" class ="form-control" asp-items="ViewBag.ProjectId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobOrdersTable.Description" class="control-label"></label>
+                <input asp-for="JobOrdersTable.Description" class="form-control" />
+                <span asp-validation-for="JobOrdersTable.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobOrdersTable.OrderDateTime" class="control-label"></label>
+                <input asp-for="JobOrdersTable.OrderDateTime" class="form-control" />
+                <span asp-validation-for="JobOrdersTable.OrderDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobOrdersTable.Quantity" class="control-label"></label>
+                <input asp-for="JobOrdersTable.Quantity" class="form-control" />
+                <span asp-validation-for="JobOrdersTable.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobOrdersTable.Price" class="control-label"></label>
+                <input asp-for="JobOrdersTable.Price" class="form-control" />
+                <span asp-validation-for="JobOrdersTable.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

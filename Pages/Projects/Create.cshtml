@@ -1,0 +1,44 @@
+﻿@page
+@model EmployeesCRUD.Pages.Projects.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ProjectsTable</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProjectsTable.Name" class="control-label"></label>
+                <input asp-for="ProjectsTable.Name" class="form-control" />
+                <span asp-validation-for="ProjectsTable.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectsTable.StartDate" class="control-label"></label>
+                <input asp-for="ProjectsTable.StartDate" class="form-control" />
+                <span asp-validation-for="ProjectsTable.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectsTable.EndDate" class="control-label"></label>
+                <input asp-for="ProjectsTable.EndDate" class="form-control" />
+                <span asp-validation-for="ProjectsTable.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
